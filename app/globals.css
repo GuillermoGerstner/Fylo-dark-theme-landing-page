@@ -1,27 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+::-webkit-scrollbar {
+  display: none;
+}
+
+.toWhite {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
+    hue-rotate(100deg) brightness(115%) contrast(106%);
+}
+
+.getStartedButtonBg {
+  background: linear-gradient(144deg, #63e1d9 0%, #34a0cd 100%);
+}
+.getStartedButtonShadow {
+  filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.16));
+}
+
+.commentBg {
+  border-radius: 3.933px;
+  background: #202a3c;
+  box-shadow: 0px 0px 8px 4px rgba(56, 56, 56, 0.05);
+}
+
+.emailBg {
+  border-radius: 9px;
+  background: #1b2330;
+  box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+input::placeholder {
+  opacity: 1;
+  color: #c0c0c0;
+  font-family: Open Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (min-width: 768px) {
+  input::placeholder {
+    font-size: 12px;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
